@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.trading-dark {
+  .v-application {
+    font-family: 'IBM Plex Sans', sans-serif!important;
+    .text-caption {
+      font-family: 'IBM Plex Sans', sans-serif!important;
+      @media screen and (max-width: $mobile) {
+        font-size: 0.65rem !important;
+        line-height: 0.7rem;
+      }
+    }
+    code {
+      font-size: 11.9px;
+      line-height: 24px;
+    }
+  }
+  .trading-logo a {
+    color: $white;
+    text-decoration: none;
+    transition: all 0.5s ease-out;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .main-section {
+    @media screen and (max-width: $mobile) {
+      padding: 0 0 36px!important;
+    }
+  }
+  .main-price {
+    .mobile-percent-change {
+      display: none;
+    }
+    @media screen and (max-width: $mobile) {
+      span {
+        font-size: 1.9rem;
+      }
+      .text-caption {
+        font-size: 0.8rem!important;
+        margin-top: 5px;
+      }
+      .mobile-percent-change {
+        display: inline;
+      }
+    }
+  }
+  .theme--dark.v-navigation-drawer,
+  .theme--dark.v-toolbar.v-sheet,
+  .theme--dark.v-card {
+    background-color: $darken3;
+  }
+  .theme--dark.v-sheet {
+    color: $white;
+  }
+  .theme--dark.v-data-table {
+    background: $darken3;
+  }
+  .order-book__section {
+    @media screen and (max-width: $mobile) {
+      padding-right: 0;
+    }
+  }
+  .orders-book {
+    color: $grey;
+    &__wrapper {
+      max-height: 524px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      @media screen and (max-width: $mobile) {
+        max-height: 380px;
+        margin-top: 6px;
+      }
+    }
+    &__book-actions {
+      @media screen and (max-width: $mobile) {
+        display: contents;
+      }
+      .v-btn--icon.v-size--default {
+        width: 30px;
+      }
+    }
+    &__overlay {
+      opacity: 0.1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      &--red {
+        @extend .orders-book__overlay;
+        background-color: $red;
+      }
+      &--green {
+        @extend .orders-book__overlay;
+        background-color: $green;
+      }
+    }
+    &__bids, &__asks {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+      overflow: hidden;
+      >div {
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          background: $darken1;
+        }
+      }
+      .total {
+        text-align: right;
+        @media screen and (max-width: $mobile) {
+          display: none;
+        }
+      }
+      .price {
+        padding: 0 4px;
+      }
+      .amount {
+        text-align: right;
+      }
+      @media screen and (max-width: $mobile) {
+        font-size: 10px;
+      }
+    }
+    &__title{
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
+    &__bids {
+      .price {
+        color: $red;
+      }
+    }
+    &__asks {
+      .price {
+        color: $green;
+      }
+    }
+  }
+  .ticker-list-container {
+    display: contents;
+    @media screen and (max-width: $mobile) {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .trades-info-header-section {
+      display: contents;
+      @media screen and (max-width: $mobile) {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        >div {
+          flex: 1 0 calc(50% - 32px);
+          margin: 2px!important;
+        }
+        >div:nth-child(1) { display: none; }
+        >div:nth-child(2) { order: 1; }
+        >div:nth-child(3) { order: 3; }
+        >div:nth-child(4) { order: 2; }
+        >div:nth-child(5) { order: 4; }
+      }
+    }
+  }
+  .v-slider--horizontal .v-slider__tick {
+    .v-slider__tick-label {
+      top: 10px;
+      @media screen and (max-width: $mobile) {
+        font-size: 10px!important;
+      }
+    }
+  }
+  .middle-div {
+    @media screen and (max-width: $medium) {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+  }
+  .theme--dark.v-application {
+    background: $darken3;
+  }
+  .theme--dark.v-app-bar.v-toolbar.v-sheet {
+    background: $darken3;
+    box-shadow: none;
+    border-bottom: 1px solid $darken2;
+    @media screen and (max-width: $mobile) {
+      position: relative;
+      height: auto!important;
+      padding-bottom: 12px;
+    }
+    .v-toolbar__content {
+      @media screen and (max-width: $mobile) {
+        height: auto!important;
+        display: block;
+        padding: 4px 0px;
+      }
+    }
+  }
+  .trading-toolbar-actions {
+    display: contents;
+    @media screen and (max-width: $mobile) {
+      display: block;
+      width: 100%;
+      text-align: right;
+      direction: rtl;
+      border-bottom: 5px solid $darken4;
+    }
+  }
+  .v-toolbar__title {
+    font-weight: 400;
+    margin-right: 10px;
+    @media screen and (max-width: $mobile) {
+      display: block;
+      float: left;
+      line-height: 48px;
+      margin-left: 15px;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+  .v-application {
+    .group-by--select {
+      .primary--text {
+        color: $white!important;
+      }
+      @media screen and (max-width: $mobile) {
+        .v-select__selection {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .auth-toolbar {
+    .v-toolbar__content {
+      justify-content: space-between!important;
+    }
+  }
+  .v-menu__content {
+    @media screen and (max-width: $mobile) {
+      .v-select-list {
+        padding: 0;
+        .v-list-item {
+          min-height: 40px;
+          white-space: nowrap;
+          font-size: 14px;
+          .v-list-item__content {
+            padding: 8px 0!important;
+            .v-list-item__title {
+              font-size: 12px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .trade-section {
+    @media screen and (max-width: $mobile) {
+      .v-item-group {
+        background: transparent!important;
+        button {
+          height: 26px !important;
+          margin-top: 5px;
+        }
+      }
+    }
+    &__available {
+      @media screen and (max-width: $mobile) {
+        font-size: 12px;
+      }
+    }
+    &__action {
+      width: 100%;
+      >button{
+        width: 50%;
+        font-weight: 600;
+        opacity: 1;
+        height: 34px!important;
+        letter-spacing: 0.5px;
+        @media screen and (max-width: $mobile) {
+          height: 36px !important;
+          font-size: 12px;
+        }
+      }
+      &-submit {
+        width: 100%!important;
+      }
+      .v-btn--active:hover::before,
+      .v-btn--active::before {
+        opacity: 0;
+      }
+      .v-text-field__details {
+        display: none;
+      }
+      .v-input__slot {
+        min-height: auto!important;
+        height: 42px;
+        margin: 0;
+        @media screen and (max-width: $mobile) {
+          height: 36px;
+        }
+      }
+      .v-select {
+        .v-label {
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+        .v-input__append-inner {
+          margin-top: 10px;
+          @media screen and (max-width: $mobile) {
+            margin-top: 3px;
+          }
+        }
+        .v-select__selections {
+          display: block;
+          text-align: center;
+          padding: 5px 0 !important;
+          height: 100%;
+          .v-select__selection {
+            margin-left: 28px;
+            max-width: 100%;
+            font-weight: 600;
+            @media screen and (max-width: $mobile) {
+              font-size: 12px;
+              line-height: 12px;
+            }
+          }
+          @media screen and (max-width: $mobile) {
+            padding: 2px 0 !important;
+          }
+        }
+        @media screen and (max-width: $mobile) {
+          .v-input__slot {
+            height: 28px;
+          }
+        }
+      }
+      .v-text-field--outlined {
+        .v-text-field__slot {
+          input {
+            text-align: center;
+          }
+        }
+        fieldset {
+          border: 0;
+          background: $darken1;
+        }
+        @media screen and (max-width: $mobile) {
+          font-size: 12px;
+        }
+      }
+      .v-slider--horizontal .v-slider__tick .v-slider__tick-label {
+        font-size: 0.75rem;
+      }
+      .v-slider--horizontal .v-slider__track-container {
+        height: 6px;
+      }
+      .v-slider__ticks-container--always-show .v-slider__tick {
+        width: 6px!important;
+        height: 6px!important;
+        margin-top: -1px;
+        background: $darken3;
+      }
+      .v-slider__thumb:before {
+        opacity: 0;
+      }
+    }
+  }
+  .chart-data-selector {
+    @media screen and (max-width: $mobile) {
+      .v-input input {
+        max-height: 28px;
+        margin-top: 0;
+        font-size: 14px;
+      }
+      .v-text-field {
+        padding-top: 0;
+        margin-top: 8px;
+      }
+      .v-text-field fieldset, .v-text-field .v-input__control, .v-text-field .v-input__slot {
+        margin-bottom: 0;
+      }
+      .v-select__selection {
+        font-size: 14px;
+        &--comma {
+          margin: 4px 4px 5px 0;
+        }
+      }
+    }
+  }
+  .currency-switcher {
+    &__list {
+      background: $darken3;
+      .v-list-item__icon img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &__header {
+      background: $darken3;
+      position:-webkit-sticky;
+      position:sticky;
+      top:0;
+      z-index: 1;
+      padding: 0 8px;
+    }
+  }
+  .open-orders-table {
+    @media screen and (max-width: $mobile) {
+      .v-data-table__wrapper > table > thead > tr:last-child > th {
+        padding: 0;
+      }
+      .v-data-table__mobile-row {
+        min-height: inherit!important;
+        padding: 0;
+      }
+    }
+  }
+  .trading-data-card {
+    border: none;
+    &__currency-switcher {
+      margin-right: 15px;
+      @media screen and (max-width: $mobile) {
+        margin-right: 0;
+      }
+    }
+  }
+  .fearGreedIndexChart-wrapper {
+    position: relative;
+    max-height: 290px;
+    overflow: hidden;
+    .fearGreedIndexChart {
+      transform: rotate(-90deg);
+      &__classification {
+        color: $white;
+        padding-left: 8px;
+        span {
+          display: block;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 22px;
+        }
+      }
+      &__value {
+        position: absolute;
+        left: 50%;
+        top: 66%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        font-size: 4rem;
+        color: #e8ebee;
+      }
+    }
+  }
+  .default-symbol-header {
+    margin: 0 12px;
+    @media screen and (max-width: $mobile) {
+      display: block;
+      margin: 8px 16px -10px;
+    }
+  }
+  .blockchain-info {
+    &__icon {
+      margin-top: 5px;
+      color: $grey;
+      cursor: pointer;
+    }
+    &__tooltip-text {
+      display: block;
+      max-width: 200px;
+    }
+    &__actions {
+      .v-select__selections span, .v-label {
+        color: #848e9c;
+        font-size: 14px;
+      }
+      .v-select__selections {
+        margin: 7px 4px 7px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        input {
+          display: none;
+        }
+      }
+    }
+    .v-expansion-panel {
+      background-color: $darken3!important;
+    }
+    &__wallet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    &__transaction-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-self: baseline;
+    }
+    &__hash {
+      display: contents;
+      >div:first-child {
+        white-space: nowrap;
+        max-width: 250px;
+        margin-right: 8px;
+      }
+    }
+    &__transaction-header {
+      @media screen and (max-width: $mobile) {
+        padding: 18px 10px;
+        position: relative;
+        display: block;
+        button {
+          float: right;
+        }
+        >div:first-child {
+          white-space: nowrap;
+        }
+        .v-expansion-panel-header__icon {
+          position: absolute;
+          bottom: 28px;
+        }
+      }
+    }
+    &__value {
+      span {
+        border: 0;
+        border-radius: 0;
+      }
+    }
+    @media screen and (min-width: $mobile) {
+      &__address-card {
+        position: sticky;
+        top: 76px;
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      &__actions {
+        .v-select {
+          margin-bottom: -26px;
+        }
+      }
+      &__transactions-wrapper {
+        border: 0;
+        .v-card__text {
+          padding: 16px 0;
+        }
+        .v-expansion-panel-content__wrap {
+          padding: 0 10px 16px;
+        }
+        .v-list-item {
+          padding: 0 10px;
+        }
+      }
+      &__mobile-list {
+        display: block;
+        div {
+          padding: 0!important;
+          font-size: 12px;
+          line-height: 18px;
+        }
+        >div:last-child {
+          border-top: 2px solid $darken2-1;
+          padding-top: 12px!important;
+          margin-top: 4px;
+        }
+      }
+      &__value {
+        float: right;
+        padding: 0!important;
+        >span {
+          padding-right: 0;
+        }
+        span {
+          border: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .contents { display: contents; }
+  .pointer { cursor: pointer; }
+  .reverse-ltr {
+    direction: ltr!important;
+    .amount {
+      text-align: right;
+    }
+  }
+  .trading-green {
+    &--text { color: $green!important; }
+    &--background { background-color: $green!important; }
+  }
+  .trading-red {
+    &--text { color: $red!important; }
+    &--background { background-color: $red!important; }
+  }
+  .trading-yellow {
+    &--text { color: $yellow!important; }
+    &--background { background-color: $yellow!important; }
+  }
+  .trading-white {
+    &--text { color: $white!important; }
+    &--background { background-color: $white!important; }
+  }
+  .trading-darken {
+    &--text { color: $darken!important; }
+    &--background { background-color: $darken!important; }
+  }
+  .trading-darken1 {
+    &--text { color: $darken1!important; }
+    &--background { background-color: $darken1!important; }
+  }
+  .trading-darken4 {
+    &--text { color: $darken4!important; }
+    &--background { background-color: $darken4!important; }
+  }
+  .trading-grey {
+    &--text { color: $grey!important; }
+    &--background { background-color: $grey!important; }
+  }
+  .trading-alert {
+    &--error { background-color: $red!important; }
+    &--background { background-color: $red!important; }
+  }
+}
